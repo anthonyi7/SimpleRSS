@@ -1,10 +1,19 @@
 ###
 language: python
-node_js:
-  - "stable"
+python: 
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+  - "3.8-dev"  # 3.8 development branch
+  - "nightly"  # nightly build
 
-before_install:
-  - npm install -g web-ext
+install: 
+  - pip install beautifulsoup4
+  - pip install lxml
+  - pip install feedparser
 
 script:
   - web-ext lint
