@@ -21,7 +21,7 @@ script:
      - stage: "Unit Tests & SonarCloud Analysis"
        script:
          - gradle jacocoTestReport
-         - gradle sonarqube -Dsonar.login=e6d68c5ec2ca897a3505175ffb9af2d5e3685bd8 -Dsonar.projectKey=anthonyi7_simpleRSS
+         - gradle sonarqube -Dsonar.login=e6d68c5ec2ca897a3505175ffb9af2d5e3685bd8 -Dsonar.projectKey=anthonyi7_SimpleRSS
 
  # Node.js .travis.yml sample
  jobs:
@@ -29,4 +29,4 @@ script:
      - stage: "Run Tests & SonarCloud Analysis"
        script:
          - npm test
-         - sonar-scanner -Dsonar.projectKey=anthonyi7_simpleRSS
+         - sonar-scanner -Dsonar.projectKey=anthonyi7_SimpleRSS
