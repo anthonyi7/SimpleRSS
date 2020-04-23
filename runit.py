@@ -30,4 +30,8 @@ if __name__ == '__main__':
     urls = ['http://feeds.bbci.co.uk/news/rss.xml']
     
     run_gui(urls)
+
+    #FOR TESTING PURPOSES ONLY, REMOVE BEFORE FINAL MERGE
+    root.after(1000, root.destroy)
+    #############################
     

@@ -1,32 +1,9 @@
-###
-language: node_js
-node_js:
-  - "stable"
+language: python
 
-before_install:
-  - npm install -g web-ext
+install: 
+  - pip install beautifulsoup4
+  - pip install lxml
 
-script:
-  - web-ext lint
-  - web-ext build
-  addons:
-   sonarcloud:
-     organization: "asus-aics"
-     token:
-       secure: e6d68c5ec2ca897a3505175ffb9af2d5e3685bd8
-
-# Java .travis.yml sample
- jobs:
-   include:
-     - stage: "Unit Tests & SonarCloud Analysis"
-       script:
-         - gradle jacocoTestReport
-         - gradle sonarqube -Dsonar.login=e6d68c5ec2ca897a3505175ffb9af2d5e3685bd8 -Dsonar.projectKey=anthonyi7_simpleRSS
-
- # Node.js .travis.yml sample
- jobs:
-   include:
-     - stage: "Run Tests & SonarCloud Analysis"
-       script:
-         - npm test
-         - sonar-scanner -Dsonar.projectKey=anthonyi7_simpleRSS
+script: python runit.py
+services:
+  - xvfb
